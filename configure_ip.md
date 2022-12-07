@@ -1,5 +1,5 @@
 # CentOS 7
-**Cách 1: Cấu hình theo file config** </br> <p>Kiểm tra thông tin eth: ```ip a```</p> Cấu hình: ```vi /etc/sysconfig/network-scripts/ifcfg-eth0``` | chú thích: "ifcfg-**eth0**" là card mạng đã kiểm tra trước đó.
+**Cách 1: Cấu hình theo file config** <p>Kiểm tra thông tin eth: ```ip a```</p> Cấu hình: ```vi /etc/sysconfig/network-scripts/ifcfg-eth0``` | chú thích: "ifcfg-**eth0**" là card mạng đã kiểm tra trước đó.
 ```
 DEVICE= eth0			#Tên card mạng
 NAME= eth0			#Tên card mạng
@@ -12,3 +12,9 @@ DNS1 = 8.8.8.8			#Địa chỉ DNS server
 DNS2 = 8.8.4.4 			#Địa chỉ DNS server 
 ```
 Khởi động lại network để có hiệu lực: ```systemctl restart network``` và kiểm tra lại ip ```ip a```
+</br> </br>
+**Cách 2: Cấu hình bằng nmtui** <br>
+Mở **nmtui** dùng lệnh: ```nmtui``` sau đó chọn **Edit a connection** tiếp theo chọn eth máy chủ có và cần cấu hình đặt **IP, GATEWAY, DNS** </br>
+Sau khi cầu hình hoàn tất lưu và thoát khởi động lại network.
+
+# Ubuntu 20.04
