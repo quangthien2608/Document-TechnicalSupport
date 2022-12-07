@@ -16,7 +16,7 @@ Lệnh xem:    fdisk -l hoặc lsblk -l
     /dev/sda1     dành cho boot 
     /dev/sda2     dành cho phân vùng /
 
-- Tiền hành extend vào sda2:
+- Tiến hành extend vào sda2:
 
     - fdisk -l /dev/sda | grep ^/dev 
 
