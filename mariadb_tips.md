@@ -33,3 +33,8 @@ GRANT ALL PRIVILEGES ON DATABASE_NAME.* TO 'USER_NAME'@'%' IDENTIFIED BY 'PASSWO
 ```
 FLUSH PRIVILEGES;
 ```
+******************************************
+- **Sửa lỗi không khởi động được dịch vụ**
+```
+sudo chmod 755 /var/lib/mysql/mysql
+```
