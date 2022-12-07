@@ -18,3 +18,7 @@ Mở **nmtui** dùng lệnh: ```nmtui``` sau đó chọn **Edit a connection** t
 Sau khi cầu hình hoàn tất lưu và thoát khởi động lại network.
 
 # Ubuntu 20.04
+
+Cấu hình file: ```nano /etc/netplan/00-installer-config.yaml``` </br> Sau đó tiến hành chỉnh sửa IP, GATEWAY, DNS </br>
+Sau khi chỉnh sửa hoàn tất nhập lệnh: ```netplan apply``` để khởi động lại cấu hình. </br> </br>
+- **Chú ý**: Nếu file cấu hình chưa có ta có thể truy cập **/etc/netplan** để kiểm tra xem có file mặc định hay không nếu có copy ra file mới để cấu hình.
