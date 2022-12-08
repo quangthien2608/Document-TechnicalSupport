@@ -13,7 +13,15 @@ mysql -u root -p
 >3. **Khởi động lại MySQL** ```systemctl restart mysql```
 >4. Đã có thể đăng nhập vào MySQL ngay bây giờ bằng lệnh ```mysql -u root -p```
 >5. Chạy lệnh ```mysql> FLUSH PRIVILEGES;```
->6. Đặt mật khẩu mới bằng cách ```ALTER USER 'root'@'localhost' IDENTIFIED BY 'newpassword';```
+>6. Đặt mật khẩu mới bằng cách dùng lệnh bên dưới
+>- **MariaDB 5.7.6 hoặc mới hơn**
+>```
+>ALTER USER 'root'@'localhost' IDENTIFIED BY 'newpassword';
+>```
+>- **MariaDB 5.7.5 hoặc cũ hơn**
+>```
+>SET PASSWORD FOR 'root'@'localhost' = PASSWORD('newpassword');
+>```
 >7. Quay trở lại **/etc/my.cnf** và xóa nội dung đã thêm ở mục 2.
 >8. Khởi động lại MySQL
 >9. Bây giờ đã có thể đăng nhập bằng mật khẩu mới ```mysql -u root -p```
