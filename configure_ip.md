@@ -61,10 +61,10 @@ network:
   version: 2
   renderer: networkd
   ethernets:
-    enp3s0f0: # name ethernet
+    enp3s0f0:
       dhcp4: no
-      addresses: [192.168.45.13/24]       # ip client
-      gateway4: 192.168.45.1              # ip gateway
+      addresses: [192.168.45.13/24]       
+      gateway4: 192.168.45.1              
       nameservers:
-          addresses: [1.1.1.1,8.8.8.8]    # ip dns
+          addresses: [1.1.1.1,8.8.8.8]
 ```
