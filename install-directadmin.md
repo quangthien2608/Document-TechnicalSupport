@@ -4,6 +4,15 @@ Bạn cần đăng nhập bằng tài khoản root. Nhưng nếu đăng nhập b
 ```
 yum -y update
 ```
+**Cài đặt net-tools**
+```
+apt install -y wget net-tools
+```
+**Xóa ứng dụng postfix được cài đặt sẵn trên server**
+```
+apt install -y remove postfix
+```
+
 - **Cài đặt các gói cần thiết**
 ```
 yum install wget gcc gcc-c++ flex bison make bind bind-libs bind-utils openssl openssl-devel perl quota libaio
@@ -13,12 +22,19 @@ autoconf automake libtool which patch mailx bzip2-devel lsof glibc-headers kerne
 ``` 
 yum -y install psmisc net-tools systemd-devel libdb-devel perl-DBI xfsprogs rsyslog logrotate crontabs file
 ```
-- **Tải tập tin setup.sh**
+
+**Chỉnh lại hostname**
+```
+hostnamectl set-hostname hosting82198.lvs
+```
+**Chỉnh dns LongVan sang Google DNS**
+```
+vi /etc/sysconfig/network-scripts/ifcfg-ens192
+```
+
+**Tải gói cài đặt DA và cấp quyền cho file cài đặt**
 ```
 wget http://www.directadmin.com/setup.sh
-```
-- **Thay đổi quyền trên file setup.sh**
-```
 chmod 755 setup.sh
 ```
 
@@ -57,10 +73,20 @@ lan_ip = ip private(172......)
 
 
 # Cài đặt Directadmin trên Ubuntu 20.04
-
+**Cập nhật các package**
 ```
 sudo apt update
 ```
+
+**Cài đặt net-tools**
+```
+apt install -y wget net-tools
+```
+**Xóa ứng dụng postfix được cài đặt sẵn trên server**
+```
+apt install -y remove postfix
+```
+
 **Cài đặt các package cần thiết**
 ```
 sudo apt install wget gcc g++ make flex bison openssl libssl-dev 
@@ -76,14 +102,25 @@ sudo apt install libcrypt-openssl-rsa-perl curl libnuma-dev libnuma1
 ```
 hostnamectl set-hostname hosting82198.lvs
 ```
+**Chỉnh dns LongVan sang Google DNS**
+```
+nano /etc/netplan/99-netcfg-vmware.yaml
+```
 
 **Tải gói cài đặt DA và cấp quyền cho file cài đặt**
 ```
 wget http://www.directadmin.com/setup.sh
 chmod 755 setup.sh
 ```
+
 **Tiến hành cài đặt**
 ```
 # ./setup.sh cPUZqL4O0elZziPXZdbMLMPy1f1b6HsYe7mCFoz/L60=
 ```
 Với dãy ``cPUZqL4O0elZziPXZdbMLMPy1f1b6HsYe7mCFoz/L60=`` là license key hash mà các anh sẽ gửi.
+
+**Sau khi hoàn tất đặt lại mật khẩu truy cập**
+```
+passwd admin
+```
+Kiểm tra đăng nhập panel directadmin với đường dẫn http://ip:2222 và login user admin vào.
