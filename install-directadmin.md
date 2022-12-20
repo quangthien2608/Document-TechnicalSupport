@@ -55,3 +55,35 @@ vi /usr/local/directadmin/conf/directadmin.conf
 lan_ip = ip private(172......)
 ```
 
+
+# Cài đặt Directadmin trên Ubuntu 20.04
+
+```
+sudo apt update
+```
+**Cài đặt các package cần thiết**
+```
+sudo apt install wget gcc g++ make flex bison openssl libssl-dev 
+sudo apt install perl perl-base perl-modules libperl-dev libperl4-corelibs-perl
+sudo apt install libwww-perl libaio1 libaio-dev zlib1g zlib1g-dev libcap-dev cron
+sudo apt install bzip2 zip automake autoconf libtool cmake pkg-config python
+sudo apt install libdb-dev libsasl2-dev libncurses5 libncurses5-dev libsystemd-dev
+sudo apt install bind9 dnsutils quota patch logrotate rsyslog libc6-dev libexpat1-dev
+sudo apt install libcrypt-openssl-rsa-perl curl libnuma-dev libnuma1
+```
+
+**Chỉnh lại hostname**
+```
+hostnamectl set-hostname hosting82198.lvs
+```
+
+**Tải gói cài đặt DA và cấp quyền cho file cài đặt**
+```
+wget http://www.directadmin.com/setup.sh
+chmod 755 setup.sh
+```
+**Tiến hành cài đặt**
+```
+# ./setup.sh cPUZqL4O0elZziPXZdbMLMPy1f1b6HsYe7mCFoz/L60=
+```
+Với dãy ``cPUZqL4O0elZziPXZdbMLMPy1f1b6HsYe7mCFoz/L60=`` là license key hash mà các anh sẽ gửi.
