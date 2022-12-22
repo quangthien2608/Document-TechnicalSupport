@@ -6,11 +6,11 @@ yum -y update
 ```
 **Cài đặt net-tools**
 ```
-apt install -y wget net-tools
+yum install -y wget net-tools
 ```
 **Xóa ứng dụng postfix được cài đặt sẵn trên server**
 ```
-apt install -y remove postfix
+yum install -y remove postfix
 ```
 
 - **Cài đặt các gói cần thiết**
