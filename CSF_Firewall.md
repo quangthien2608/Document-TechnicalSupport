@@ -20,7 +20,7 @@ csf -r
 ```
 
 | Command	 | Description	 | Example |
-| :---         |     :---:      |          ---: |
+| :---         |     :---      |          :--- |
 | csf -e	   | Enable CSF	     | root@server[~]#csf -e    |
 | csf -x	     | Disable CSF	      | root@server[~]#csf -x      |
 | csf -s	   | Start the firewall rules	     | root@server[~]#csf -s    |
