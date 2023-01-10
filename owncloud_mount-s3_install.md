@@ -68,3 +68,56 @@ d) Delete this remote
 y/e/d> y
 
 ```
+
+**mount S3 config including Rclone**
+**create folder S3 data mount s3 rclone**
+```
+mkdir –p /home/owncloud/own_data/files/
+```
+**create service rclone**
+```
+cd /etc/systemd/system/ 
+wget https://s3-hcm1-r1.longvan.net/testing/rclone.txt
+cp -r rclone.txt rclone.service
+```
+Environment=MOUNT_DIR=/home/owncloud/own_data/files/ is folder sync data server s3 rclone
+```
+systemctl restart daemon-reload
+systemctl restart rclone
+systemctl enable rclone
+```
+**create folder data owncloud**
+```
+mkdir -p /home/owncloud/own_data/db/
+mkdir -p /home/owncloud/own_data/redis/
+```
+
+**create folder containt file install owncloud docker compose**
+```
+mkdir -p /home/owncloud/own_installer/own/
+cd /home/owncloud/own_installer/own/
+```
+**get file docker-compose.yml**
+```
+wget https://s3-hcm1-r1.longvan.net/testing/docker-compose.yml
+```
+**create the environment configuration file**
+```
+cat << EOF > .env
+OWNCLOUD_VERSION=10.11
+OWNCLOUD_DOMAIN=localhost:8080
+OWNCLOUD_TRUSTED_DOMAINS=IP server current using
+ADMIN_USERNAME=admin
+ADMIN_PASSWORD=admin
+HTTP_PORT=8080
+EOF
+```
+
+**installing**
+```
+cd /home/owncloud/own_installer/own/
+docker-compose up -d
+```
+**check access owncloud** </br>
+http://{your ip}:8080
+
