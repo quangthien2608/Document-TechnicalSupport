@@ -34,3 +34,21 @@ curl https://rclone.org/install.sh | sudo bash
 ```
 rclone config
 ```
+**config file "/root/.config/rclone/rclone.conf" not found - using defaults </br> No remotes found, make a new one?**
+```
+n) new remote
+s) set configuration password 
+q) quit config  
+n/s/q> n
+
+Enter name for new remote
+name> s3
+
+5 / Amazon S3 Compliant Storage Providers including AWS, Alibaba, Ceph, China Mobile, Cloudflare...
+Storage> 5
+
+Next step 
+> 24
+
+
+```
