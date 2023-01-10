@@ -50,5 +50,21 @@ Storage> 5
 Next step 
 > 24
 
+access_key_id> input access key
+secret_access_key> input secret access key
+endpoint> s3-hcm-r1.longvan.net
+location_constraint>
+acl> 1
+
+Edit advanced config?
+y) Yes
+n) No (default)
+y/n> n
+
+Keep this "s3" remote?
+y) Yes this is OK (default)
+e) Edit this remote
+d) Delete this remote
+y/e/d> y
 
 ```
