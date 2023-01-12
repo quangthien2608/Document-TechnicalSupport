@@ -47,9 +47,8 @@ name> s3
 5 / Amazon S3 Compliant Storage Providers including AWS, Alibaba, Ceph, China Mobile, Cloudflare...
 Storage> 5
 
-Next step 
-> 24
-
+provider> 24
+env_auth>
 access_key_id> input access key
 secret_access_key> input secret access key
 endpoint> s3-hcm-r1.longvan.net
