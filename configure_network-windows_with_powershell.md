@@ -16,7 +16,7 @@ IPv4DefaultGateway   : 192.168.64.1
 DNSServer            : 1.1.1.1
                        8.8.8.8
 ```
-
+---
 Creates and configures an IP address. (with InterfaceIndex)
 ```
 New-NetIPAddress -InterfaceIndex 3 -IPAddress 192.168.64.199 -AddressFamily IPv4 -PrefixLength 24 -DefaultGateway 192.168.64.1
