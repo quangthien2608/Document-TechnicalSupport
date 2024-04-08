@@ -10,7 +10,7 @@ yum install -y wget net-tools
 ```
 **Xóa ứng dụng postfix được cài đặt sẵn trên server**
 ```
-yum install -y remove postfix
+yum remove -y postfix
 ```
 
 - **Cài đặt các gói cần thiết**
