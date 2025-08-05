@@ -1,3 +1,7 @@
+## Mục lục
+# OS Ubuntu
+
+
 # SSH
 - **Syntax**
 ```
@@ -11,7 +15,7 @@ Run with port 221
 ```
 ssh root@192.168.22 -p 221
 ```
-#
+
 # Remove file with Inodes 
 check indodes
 ``
