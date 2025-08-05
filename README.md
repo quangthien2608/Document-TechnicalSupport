@@ -1,5 +1,5 @@
 ## Mục lục
-- OS Ubuntu {#os-ubuntu}
+- [OS Ubuntu]{#os-ubuntu}
 
 # SSH
 - **Syntax**
