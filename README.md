@@ -1,7 +1,20 @@
 # Mục lục
-- [OS Ubuntu](#os-ubuntu)
-
-# SSH
+- [Secure Shell - SSH](#ssh)
+- [Lệnh kiểm tra server - Ubuntu OS](#os-ubuntu)
+- [Extend trên CentOS7 + Ubuntu16 1Disk không cần reboot server](#extend-disk-centos)
+- [CentOS 7 - Cấu hình card mạng](#centos-7-config-cardnet)
+- [Ubuntu 20.04 - Cấu hình card mạng](#ubuntu-config-cardnet)
+- [Lệnh cấu hình (firewall) UFW cơ bản - Ubuntu](#ufw-config)
+- [Lệnh cấu hình (Firewalld) CentOS 7](#firewalld-config)
+- [Cài đặt Directadmin trên CentOS 7 & 8](#install-directadmin-centos)
+- [Cài đặt Directadmin trên Ubuntu 20.04](#install-directadmin-ubuntu)
+- [Cài đặt PHP, PHPMyAdmin](#install-php-phpmyadmin)
+- [OwnCloud - Rclone mount S3 Storage](#owncloud-mount-s3-storage)
+- [Lệnh cấu hình (firewall) CSF](#csf)
+- [Dirty bit](#dirtybit)
+- [Autoruns for Windows](#autoruns-for-windows)
+- [RAMMap](#rammap)
+# [Secure Shell - SSH](#ssh)
 - **Syntax**
 ```
 ssh user@ip -p port
@@ -59,7 +72,7 @@ sử dụng thêm grep để tìm
 find / -name "*jpg" -mtime 4 | grep site
 ```
 #
-# [OS Ubuntu](#os-ubuntu)
+# [Lệnh kiểm tra server - Ubuntu OS](#os-ubuntu)
 **1.Kiểm tra server** </br> <p>Lệnh kiểm tra phiên bản: ```lsb_release -a```</p>
 **Kiểm tra tài nguyên :**
 - **CPU** 
@@ -111,7 +124,7 @@ sudo free -m
 ```
 #
 
-# Extend trên CentOS7 + Ubuntu16 1Disk không cần reboot server:
+# [Extend trên CentOS7 + Ubuntu16 1Disk không cần reboot server](#extend-disk-centos)
 ```
 yum install -y parted #Centos
 ```
@@ -271,7 +284,7 @@ xfs_growfs /dev/Mega/root          #CentOS7
 
 ******************************************
 # 
-# CentOS 7
+# [CentOS 7 - Cấu hình card mạng](#centos-7-config-cardnet)
 **Cách 1: Cấu hình theo file config** <p>Kiểm tra thông tin eth:</p> 
 ```
 ip a
@@ -309,7 +322,7 @@ nmtui
 sau đó chọn **Edit a connection** tiếp theo chọn eth máy chủ có và cần cấu hình đặt **IP, GATEWAY, DNS** </br>
 Sau khi cầu hình hoàn tất lưu và thoát khởi động lại network.
 
-# Ubuntu 20.04
+# [Ubuntu 20.04 - Cấu hình card mạng](#ubuntu-config-cardnet)
 
 Cấu hình file: 
 ```
@@ -342,7 +355,7 @@ network:
           addresses: [1.1.1.1,8.8.8.8]
 ```
 #
-# Firewall Ubuntu
+# [Lệnh cấu hình (firewall) UFW cơ bản - Ubuntu](#ufw-config)
 **Configure file location**
 ```
 sudo nano /etc/default/ufw
@@ -454,7 +467,7 @@ sudo ufw disable
 sudo ufw reset
 ```
 #
-# Firewalld Cent 7
+# [Lệnh cấu hình (Firewalld) CentOS 7](#firewalld-config)
 
 **check status**
 ```
@@ -539,7 +552,7 @@ firewall-cmd –zone=public –add-services=configurefirewall-admin
 firewall-cmd –zone=public –add-services=configurefirewall-admin –permanent
 ```
 #
-# Cài đặt Directadmin trên CentOS 7 & 8
+# [Cài đặt Directadmin trên CentOS 7 & 8](#install-directadmin-centos)
 - **Update Server và cài đặt các gói cần thiết** </br>
 Bạn cần đăng nhập bằng tài khoản root. Nhưng nếu đăng nhập bằng tài khoản khác thì dùng lệnh su để chuyển sang tài khoản root, nhưng nhớ thêm dùng **“AllowUsers username”** vào file **“/etc/ssh/sshd_config”** nếu không thì khi cài đặt xong bạn không thể truy cập vào được nữa mà phải cài lại OS.
 ```
@@ -612,7 +625,7 @@ vi /usr/local/directadmin/conf/directadmin.conf
 lan_ip = ip private(172......)
 ```
 #
-# Cài đặt Directadmin trên Ubuntu 20.04
+# [Cài đặt Directadmin trên Ubuntu 20.04](#install-directadmin-ubuntu)
 **Cập nhật các package**
 ```
 sudo apt update
@@ -665,7 +678,7 @@ passwd admin
 ```
 Kiểm tra đăng nhập panel directadmin với đường dẫn http://ip:2222 và login user admin vào.
 #
-# Cài đặt PHP, PHPMyAdmin
+# [Cài đặt PHP, PHPMyAdmin](#install-php-phpmyadmin)
 Lệnh cài đặt:
 ```
 apt install -y php*
@@ -724,7 +737,7 @@ FLUSH PRIVILEGES;
 sudo chmod 755 /var/lib/mysql/mysql
 ```
 #
-# OwnCloud - Rclone mount S3 Storage
+# [OwnCloud - Rclone mount S3 Storage](#owncloud-mount-s3-storage)
 **update & upgrade OS**
 ```
 apt-get update
@@ -846,7 +859,7 @@ docker-compose up -d
 **check access owncloud** </br>
 http://{your ip}:8080
 #
-# CSF FW
+# [Lệnh cấu hình (firewall) CSF](#csf)
 - **Open a Port in CSF Firewall** </br>
 **Open the configuration file of the CSF as follows.**
 ```
@@ -884,7 +897,7 @@ csf -r
 | csf -g [IP.add.re.ss]   | Search the iptables and ip6tables rules for a match (e.g. IP, CIDR, Port Number)	       | root@server[~]#csf -g 66.192.23.1      |
 | csf -t    |  Displays the current list of temporary allow and deny IP entries with their TTL and comments	       |  root@server[~]#csf -t      |
 #
-# Dirty bit
+# [Dirty bit](#dirtybit)
 - **Cú pháp**
 ```
 fsutil dirty {query | set} <volumepath>
@@ -908,9 +921,9 @@ chkdsk D: /x
 
 Tham khảo: https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/chkdsk?tabs=event-viewer
 #
-# Autoruns for Windows
+# [Autoruns for Windows](#autoruns-for-windows)
 https://learn.microsoft.com/en-us/sysinternals/downloads/autoruns
 *****************************
-# RAMMap
+# [RAMMap](#rammap)
 https://learn.microsoft.com/en-us/sysinternals/downloads/rammap
 #
