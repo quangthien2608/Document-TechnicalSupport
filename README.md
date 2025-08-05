@@ -14,6 +14,7 @@
 - [Dirty bit](#dirtybit)
 - [Autoruns for Windows](#autoruns-for-windows)
 - [RAMMap](#rammap)
+
 # [Secure Shell - SSH](#ssh)
 - **Syntax**
 ```
@@ -71,7 +72,7 @@ sử dụng thêm grep để tìm
 ```
 find / -name "*jpg" -mtime 4 | grep site
 ```
-#
+
 # [Lệnh kiểm tra server - Ubuntu OS](#os-ubuntu)
 **1.Kiểm tra server** </br> <p>Lệnh kiểm tra phiên bản: ```lsb_release -a```</p>
 **Kiểm tra tài nguyên :**
@@ -111,7 +112,7 @@ Kiểm tra:
 sudo hdparm -Tt /dev/sda
 ```
 **chú thích**: "/dev/sda/" ở đây là ổ đĩa cần kiểm tra
-#
+
 # Command
 - **Clear memory cache**
 ```
@@ -283,7 +284,7 @@ xfs_growfs /dev/Mega/root          #CentOS7
 ```
 
 ******************************************
-# 
+
 # [CentOS 7 - Cấu hình card mạng](#centos-7-config-cardnet)
 **Cách 1: Cấu hình theo file config** <p>Kiểm tra thông tin eth:</p> 
 ```
@@ -354,7 +355,7 @@ network:
       nameservers:
           addresses: [1.1.1.1,8.8.8.8]
 ```
-#
+
 # [Lệnh cấu hình (firewall) UFW cơ bản - Ubuntu](#ufw-config)
 **Configure file location**
 ```
@@ -551,7 +552,7 @@ firewall-cmd –get-services
 firewall-cmd –zone=public –add-services=configurefirewall-admin
 firewall-cmd –zone=public –add-services=configurefirewall-admin –permanent
 ```
-#
+
 # [Cài đặt Directadmin trên CentOS 7 & 8](#install-directadmin-centos)
 - **Update Server và cài đặt các gói cần thiết** </br>
 Bạn cần đăng nhập bằng tài khoản root. Nhưng nếu đăng nhập bằng tài khoản khác thì dùng lệnh su để chuyển sang tài khoản root, nhưng nhớ thêm dùng **“AllowUsers username”** vào file **“/etc/ssh/sshd_config”** nếu không thì khi cài đặt xong bạn không thể truy cập vào được nữa mà phải cài lại OS.
@@ -624,7 +625,7 @@ vi /usr/local/directadmin/conf/directadmin.conf
 
 lan_ip = ip private(172......)
 ```
-#
+
 # [Cài đặt Directadmin trên Ubuntu 20.04](#install-directadmin-ubuntu)
 **Cập nhật các package**
 ```
@@ -677,7 +678,7 @@ Với dãy ``cPUZqL4O0elZziPXZdbMLMPy1f1b6HsYe7mCFoz/L60=`` là license key hash
 passwd admin
 ```
 Kiểm tra đăng nhập panel directadmin với đường dẫn http://ip:2222 và login user admin vào.
-#
+
 # [Cài đặt PHP, PHPMyAdmin](#install-php-phpmyadmin)
 Lệnh cài đặt:
 ```
@@ -687,7 +688,7 @@ apt install -y php*
 apt install -y phpmyadmin php*-mbstring php*-zip php*-gd php*-json php*-curl
 ```
 Chú thích: "*" ở đây là số phiên bản php ta cần cài đặt để tránh xảy không đúng phiên bản cần cài đặt
-#
+
 # MariaDB Tips
 - **Truy cập**
 ```
@@ -736,7 +737,7 @@ FLUSH PRIVILEGES;
 ```
 sudo chmod 755 /var/lib/mysql/mysql
 ```
-#
+
 # [OwnCloud - Rclone mount S3 Storage](#owncloud-mount-s3-storage)
 **update & upgrade OS**
 ```
@@ -896,7 +897,7 @@ csf -r
 | csf -df    | Remove and unblock all entries in /etc/csf/csf.deny	      | root@server[~]#csf -df      |
 | csf -g [IP.add.re.ss]   | Search the iptables and ip6tables rules for a match (e.g. IP, CIDR, Port Number)	       | root@server[~]#csf -g 66.192.23.1      |
 | csf -t    |  Displays the current list of temporary allow and deny IP entries with their TTL and comments	       |  root@server[~]#csf -t      |
-#
+
 # [Dirty bit](#dirtybit)
 - **Cú pháp**
 ```
@@ -920,7 +921,7 @@ chkdsk D: /x
 ```
 
 Tham khảo: https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/chkdsk?tabs=event-viewer
-#
+
 # [Autoruns for Windows](#autoruns-for-windows)
 https://learn.microsoft.com/en-us/sysinternals/downloads/autoruns
 *****************************
