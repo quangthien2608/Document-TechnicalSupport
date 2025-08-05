@@ -59,7 +59,7 @@ sử dụng thêm grep để tìm
 find / -name "*jpg" -mtime 4 | grep site
 ```
 #
-# OS Ubuntu {#os-ubuntu}
+# [OS Ubuntu]{#os-ubuntu}
 **1.Kiểm tra server** </br> <p>Lệnh kiểm tra phiên bản: ```lsb_release -a```</p>
 **Kiểm tra tài nguyên :**
 - **CPU** 
