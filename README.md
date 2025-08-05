@@ -1,7 +1,7 @@
 # Mục lục
 - [OS Ubuntu](#os-ubuntu)
 
-# SSH
+# SSH {#os-ubuntu}
 - **Syntax**
 ```
 ssh user@ip -p port
